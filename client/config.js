@@ -1,9 +1,9 @@
 const config = {
     db: {
-      host: "10.0.1.52",
-      user: "laeeqahmad",
-      password: "SarmaayaDB@User786",
-      database: "laeeqahm_ver2_sarmaaya_pk",
+      host: "db4free.net",
+      user: "abdurafeyf",
+      password: "abdurafeyf",
+      database: "usmarket",
     },
     listPerPage: 10,
 };
