@@ -27,7 +27,7 @@ async function getMultiple(page = 1){
         `
     )
     
-    const groupedData = sunburst_data.transform(rows);
+    const groupedData = sunburst_data(rows);
     const data = helper.emptyOrRows(groupedData);
     const meta = {page};
 

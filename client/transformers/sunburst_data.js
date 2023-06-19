@@ -1,4 +1,4 @@
-function transform(data) {
+function sunburst_data(data) {
     const groupedData = {}
 
     // Iterate over the data array and group the objects by sector
@@ -16,6 +16,4 @@ function transform(data) {
     return groupedData;
 }
 
-module.exports = {
-    transform
-}
+module.exports = sunburst_data;
