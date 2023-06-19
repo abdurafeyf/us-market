@@ -1,5 +1,6 @@
 function sunburst_data(data) {
-    const groupedData = {}
+    const groupedData = {};
+    const finalData = [];
 
     // Iterate over the data array and group the objects by sector
     data.forEach((obj) => {
@@ -12,8 +13,9 @@ function sunburst_data(data) {
 
         // Push the object to the corresponding sector array
         groupedData[sector].push(obj);
+        finalData.append(groupedData);
     });
-    return groupedData;
+    return finalData;
 }
 
 module.exports = sunburst_data;
