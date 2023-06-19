@@ -13,7 +13,7 @@ function sunburst_data(data) {
 
         // Push the object to the corresponding sector array
         groupedData[sector].push(obj);
-        finalData.append(groupedData);
+        finalData.push(groupedData);
     });
     return finalData;
 }
