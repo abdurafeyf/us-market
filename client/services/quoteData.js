@@ -1,6 +1,7 @@
 const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
+const sunburst_data = require('./../transformers/sunburst_data');
 
 async function getMultiple(page = 1){
     const offset = helper.getOffset(page, config.listPerPage);
@@ -22,11 +23,12 @@ async function getMultiple(page = 1){
         CROSS JOIN (
           SELECT SUM(sharesOutstanding * price) AS total_sum
           FROM tbl_nasdaq_constituent_quote
-        ) AS subquery
-        LIMIT 3;
+        ) AS subquery;
         `
     )
-    const data = helper.emptyOrRows(rows);
+    
+    const groupedData = sunburst_data.transform(rows);
+    const data = helper.emptyOrRows(groupedData);
     const meta = {page};
 
     return {
