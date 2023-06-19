@@ -1,6 +1,15 @@
 function sunburst_data(data) {
+    // object to group data on the basis of sector
     const groupedData = {};
+    /* 
+    after grouping the data finalData array will be used to store other information about that 
+    particular sector
+    */
     const finalData = [];
+    /*
+    Final response to be sent over the API
+     */
+    let response = {};
 
     // Iterate over the data array and group the objects by sector
     data.forEach((obj) => {
@@ -43,7 +52,18 @@ function sunburst_data(data) {
         });
     }
 
-    return finalData;
+    var market_change_p = 0.0;
+    for (const i in finalData) {
+        market_change_p += parseFloat(finalData[i]['sector_change']);
+    }
+    response = ({
+        status: "success",
+        indice: "NASDAQ",
+        market_change_p: market_change_p,
+        data: finalData
+    })
+
+    return response;
 }
 
 module.exports = sunburst_data;
