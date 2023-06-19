@@ -15,10 +15,18 @@ function sunburst_data(data) {
         groupedData[sector].push(obj);
     });
 
+    var id = 0;
     // Iterate over the groupedData object and create the finalData array
     for (const sector in groupedData) {
+        var sector_change = 0.0;
+        for (const i in groupedData[sector]) {
+            sector_change += parseFloat(groupedData[sector][i]['stock_change_p']);
+        }
+        id += 1;
         finalData.push({
+            sector_code: id, 
             stock_sector_name: sector,
+            sector_change: sector_change,
             stocks: groupedData[sector]
         });
     }
