@@ -31,10 +31,7 @@ async function getMultiple(page = 1){
     const data = helper.emptyOrRows(groupedData);
     const meta = {page};
 
-    return {
-        data,
-        meta
-    }
+    return data;
 }
 
 module.exports = {
