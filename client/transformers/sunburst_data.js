@@ -6,19 +6,23 @@ function sunburst_data(data) {
     data.forEach((obj) => {
         const sector = obj.stock_sector;
 
-        finalData.push({
-            stock_sector_name: sector,
-            stocks:[]
-        })
-        
         // Check if the sector already exists in the groupedData object
         if (!groupedData.hasOwnProperty(sector)) {
-            finalData[sector] = [];
+            groupedData[sector] = [];
         }
+
         // Push the object to the corresponding sector array
         groupedData[sector].push(obj);
-        finalData.push(groupedData);
     });
+
+    // Iterate over the groupedData object and create the finalData array
+    for (const sector in groupedData) {
+        finalData.push({
+            stock_sector_name: sector,
+            stocks: groupedData[sector]
+        });
+    }
+
     return finalData;
 }
 
