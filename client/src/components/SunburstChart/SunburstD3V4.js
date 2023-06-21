@@ -41,6 +41,7 @@ const SunburstD3V4 = () => {
   }, []);
 
   if (!post) return null;
+  console.log(post);
 
   return (
     <div>
