@@ -356,7 +356,7 @@ class SunburstAnyChart extends React.Component {
     chart.labels().format("{%Name}\n{%Value}{scale:(1000000)(1)|( mln)}");
 
     // format chart tooltip
-    chart.tooltip().format("Population: {%Value}{scale:(1000000)(1)|( mln)}");
+    chart.tooltip().format("Name:{%Name}\nPopulation: {%Value}{scale:(1000000)(1)|( mln)}");
 
     // the fill specified in the data has priority
     // set point fill
