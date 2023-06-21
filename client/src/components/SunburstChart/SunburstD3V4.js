@@ -2,30 +2,30 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import Sunburst from "react-zoomable-sunburst-d3-v4";
 
-const data = {
-  name: "TOPICS",
-  children: [
-    {
-      name: "Topic A",
-      children: [{ name: "Sub A1", size: 4 }, { name: "Sub A2", size: 4 }]
-    },
-    {
-      name: "Topic B",
-      children: [
-        { name: "Sub B1", size: 3 },
-        { name: "Sub B2", size: 3 },
-        {
-          name: "Sub B3",
-          size: 3
-        }
-      ]
-    },
-    {
-      name: "Topic C",
-      children: [{ name: "Sub A1", size: 4 }, { name: "Sub A2", size: 4 }]
-    }
-  ]
-};
+// const data = {
+//   name: "TOPICS",
+//   children: [
+//     {
+//       name: "Topic A",
+//       children: [{ name: "Sub A1", size: 4 }, { name: "Sub A2", size: 4 }]
+//     },
+//     {
+//       name: "Topic B",
+//       children: [
+//         { name: "Sub B1", size: 3 },
+//         { name: "Sub B2", size: 3 },
+//         {
+//           name: "Sub B3",
+//           size: 3
+//         }
+//       ]
+//     },
+//     {
+//       name: "Topic C",
+//       children: [{ name: "Sub A1", size: 4 }, { name: "Sub A2", size: 4 }]
+//     }
+//   ]
+// };
 
 const baseUrl = "http://127.0.0.1:5000/quote-data";
 
@@ -46,7 +46,7 @@ const SunburstD3V4 = () => {
   return (
     <div>
       <Sunburst
-        data={data}
+        data={post}
         onSelect={onSelect}
         scale="linear"
         tooltipContent={
