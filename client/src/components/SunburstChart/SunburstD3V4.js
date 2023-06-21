@@ -3,31 +3,6 @@ import axios from "axios";
 import Sunburst from "react-zoomable-sunburst-d3-v4";
 
 const baseUrl = "http://127.0.0.1:5000/quote-data";
-let data = {
-    name: "TOPICS",
-    children: [
-      {
-        name: "Topic A",
-        children: [{ name: "Sub A1", size: 4 }, { name: "Sub A2", size: 4 }]
-      },
-      {
-        name: "Topic B",
-        children: [
-          { name: "Sub B1", size: 3 },
-          { name: "Sub B2", size: 3 },
-          {
-            name: "Sub B3",
-            size: 3
-          }
-        ]
-      },
-      {
-        name: "Topic C",
-        children: [{ name: "Sub A1", size: 4 }, { name: "Sub A2", size: 4 }]
-      }
-    ]
-  };
-  console.log('main data', data);
 const SunburstD3V4 = () => {
   const onSelect = (event) => {
     // console.log(event);
