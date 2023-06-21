@@ -6,7 +6,7 @@ import SunburstAnyChart from "./components/SunburstChart/SunburstAnyChart";
 function App() {
   return (
     <div className="App">
-      <h1>This is a new chart</h1>
+      <h1>Sunburst Chart</h1>
       <SunburstAnyChart />
       {/* <div id="chart" /> */}
     </div>
