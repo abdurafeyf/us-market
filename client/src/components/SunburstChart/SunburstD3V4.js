@@ -1,8 +1,8 @@
-import React from "react";
-
+import React, { useState,useEffect } from "react";
+import axios from "axios";
 import Sunburst from "react-zoomable-sunburst-d3-v4";
 
-let data = {
+const data = {
   name: "TOPICS",
   children: [
     {
@@ -27,32 +27,48 @@ let data = {
   ]
 };
 
+const baseUrl = "http://127.0.0.1:5000/quote-data";
 
-class SunburstD3V4 extends React.Component {
-  onSelect(event) {
-    console.log(event);
-  }
-  render() {
-    return (
-      <div>
-        <Sunburst
-          data={data}
-          onSelect={this.onSelect}
-          scale="linear"
-          tooltipContent={
-            <div
-                class="sunburstTooltip"
-                style={{ position: 'absolute', color: 'black', zIndex: 10, background: '#e2e2e2', padding: 5, textAlign: 'center' }}
-            />
-          }
-          tooltip
-          tooltipPosition="right"
-          keyId="anagraph"
-          width="480"
-          height="400"
-        />
-      </div>
-    );
-  }
-}
+const SunburstD3V4 = () => {
+  const onSelect = (event) => {
+    // console.log(event);
+  };
+  const [post, setPost] = useState(null);
+  useEffect(() => {
+    axios.get(baseUrl).then((response) => {
+        setPost(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
+  return (
+    <div>
+      <Sunburst
+        data={data}
+        onSelect={onSelect}
+        scale="linear"
+        tooltipContent={
+          <div
+            className="sunburstTooltip"
+            style={{
+              position: "absolute",
+              color: "black",
+              zIndex: 10,
+              background: "#e2e2e2",
+              padding: 5,
+              textAlign: "center"
+            }}
+          />
+        }
+        tooltip
+        tooltipPosition="right"
+        keyId="anagraph"
+        width="480"
+        height="400"
+      />
+    </div>
+  );
+};
+
 export default SunburstD3V4;
