@@ -22,7 +22,7 @@ const SunburstD3V4 = () => {
 
       sector.stocks.forEach((stock) => {
         sectorNode.children.push({
-          name: stock.stock_symbol,
+          name: stock.stock_title + ' (' + stock.stock_symbol + ')',
           size: stock.weightage,
         });
       });
