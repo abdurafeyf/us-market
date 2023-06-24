@@ -3,7 +3,8 @@ const config = require('./../config');
 
 async function query(sql, params) {
     return new Promise((resolve, reject) => {
-        const connection = mysql.createConnection(config.db);
+
+        const connection = mysql.createConnection(config.db.connection_string);
     
         connection.connect((err) => {
             if (err) {
