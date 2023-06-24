@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Sunburst from "react-zoomable-sunburst-d3-v4";
 
-const baseUrl = "http://127.0.0.1:5000/quote-data";
+const baseUrl = "http://127.0.0.1:5000/sunburst-data";
 const SunburstD3V4 = () => {
   const onSelect = (event) => {
     // console.log(event);
