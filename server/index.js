@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 5000;
-const quoteDataRoute = require("./routes/quoteData");
+const sunburstDataRoute = require("./routes/sunburstData");
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.json({ message: "ok" }); // Send a JSON response instead of HTML
 });
 
-app.use("/quote-data", quoteDataRoute);
+app.use("/sunburst-data", sunburstDataRoute);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

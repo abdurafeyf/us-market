@@ -16,7 +16,7 @@ async function query(sql, params) {
     return new Promise((resolve, reject) => {
 
         const connection = mysql.createConnection(dbConfig);
-        console.log(connection);
+        // console.log(connection);
     
         connection.connect((err) => {
             if (err) {

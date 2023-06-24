@@ -1,7 +1,7 @@
 const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
-const sunburst_data = require('./../transformers/sunburst_data');
+const sunburst_data = require('../transformers/sunburst_data');
 
 async function getMultiple(page = 1){
     const offset = helper.getOffset(page, config.listPerPage);
