@@ -2,7 +2,6 @@
 The purpose of this is to get the nasdaq tickers name and metadata from 
 the api (https://site.financialmodelingprep.com) and insert that data into our database.
 """
-import pandas as pd
 import requests
 from dotenv import load_dotenv
 load_dotenv()
@@ -56,10 +55,7 @@ except Error as e:
     print("Some error has occured {}".format(e))
 
 finally:
-    try:
-        if connection.is_connected():
-            cursor.close()
-            connection.close()
-            print("MySQL connection is closed")
-    except Error as e:
-        print(e)
+    if connection.is_connected():
+        cursor.close()
+        connection.close()
+        print("MySQL connection is closed")
