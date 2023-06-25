@@ -51,8 +51,8 @@ try:
     cursor.executemany(mySql_insert_query, tickers_metadata)
     print(cursor.rowcount, "records inserted successfully")
 
-except Error as e:
-    print("Some error has occured {}".format(e))
+except Error as error:
+    print("Some error has occured {}".format(error))
 
 finally:
     if connection.is_connected():
