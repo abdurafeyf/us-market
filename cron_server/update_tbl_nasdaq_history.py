@@ -4,12 +4,14 @@ the api (https://site.financialmodelingprep.com) and insert that data into our d
 """
 import requests
 from dotenv import load_dotenv
-load_dotenv()
 import datetime
 import os
 from mysql.connector import Error
 import mysql.connector
 import time
+
+
+load_dotenv()
 
 ndx_url = f"https://financialmodelingprep.com/api/v3/historical-price-full/%5ENDX?apikey={os.getenv('FINANCIAL_MODELING_PREP_KEY')}"
 

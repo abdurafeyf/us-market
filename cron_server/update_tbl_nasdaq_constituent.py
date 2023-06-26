@@ -4,10 +4,12 @@ the api (https://site.financialmodelingprep.com) and insert that data into our d
 """
 import requests
 from dotenv import load_dotenv
-load_dotenv()
 import os
 from mysql.connector import Error
 import mysql.connector
+
+
+load_dotenv()
 
 tickers_url = f"https://financialmodelingprep.com/api/v3/nasdaq_constituent?apikey={os.getenv('FINANCIAL_MODELING_PREP_KEY')}"
 

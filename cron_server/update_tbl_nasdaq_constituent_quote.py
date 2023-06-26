@@ -10,6 +10,8 @@ from mysql.connector import Error
 import requests
 import os
 from dotenv import load_dotenv
+
+
 load_dotenv()
 
 quote_data = []
