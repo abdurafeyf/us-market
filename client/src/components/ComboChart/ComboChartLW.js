@@ -1,11 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createChart } from 'lightweight-charts';
+import axios from 'axios';
+
+const baseUrl = 'http://127.0.0.1:5000/combo-data';
 
 const ComboChartLW = () => {
   const chartContainerRef = useRef(null);
   const chartRef = useRef(null);
 
+  const [post, setPost] = useState(null);
+
   useEffect(() => {
+    axios.get(baseUrl).then((response) => {
+      const data = response.data;
+      setPost(data);
+    });
+  }, [post]);
+
+  useEffect(() => {
+    console.log(post);
+    if (!post) return;
+
     chartRef.current = createChart(chartContainerRef.current, {
       width: 600,
       height: 300,
@@ -19,19 +34,16 @@ const ComboChartLW = () => {
       layout: {
         background: {
           type: 'solid',
-          // color: '#131722',
-          color: 'white'
+          color: 'white',
         },
         textColor: '#d1d4dc',
       },
       grid: {
         vertLines: {
-          // color: 'rgba(42, 46, 57, 0)',
-          color: 'rgba(0, 0, 0, 0)'
+          color: 'rgba(0, 0, 0, 0)',
         },
         horzLines: {
-          // color: 'rgba(42, 46, 57, 0.6)',
-          color: 'rgba(0, 0, 0, 0)'
+          color: 'rgba(0, 0, 0, 0)',
         },
       },
     });
@@ -57,20 +69,11 @@ const ComboChartLW = () => {
         bottom: 0,
       },
     });
+    
 
-    const areaSeriesData = [
-      { time: '2018-10-19', value: 54.90 },
-      { time: '2018-10-22', value: 54.98 },
-      { time: '2018-10-23', value: 57.21 },
-      // Add more data points
-    ];
+    const areaSeriesData = post.price;
 
-    const volumeSeriesData = [
-      { time: '2018-10-19', value: 19103293.00, color: 'rgba(0, 150, 136, 0.8)' },
-      { time: '2018-10-22', value: 21737523.00, color: 'rgba(255,82,82, 0.8)' },
-      { time: '2018-10-23', value: 22737523.00, color: 'rgba(255,82,82, 0.8)' },
-      // Add more data points
-    ];
+    const volumeSeriesData = post.volume;
 
     areaSeries.setData(areaSeriesData);
     volumeSeries.setData(volumeSeriesData);
@@ -78,7 +81,7 @@ const ComboChartLW = () => {
     return () => {
       chartRef.current.remove();
     };
-  }, []);
+  }, [post]);
 
   return <div ref={chartContainerRef}></div>;
 };

@@ -5,7 +5,7 @@ const combo_data = require('../transformers/combo_data');
 
 async function getMultiple(page=1){
     const rows = await db.query(
-        `SELECT snapshot_date, close, volume, change_p FROM tbl_nasdaq_history;
+        `SELECT snapshot_date, close, volume, change_p FROM tbl_nasdaq_history ORDER BY snapshot_date ASC;
         `
     );
     
