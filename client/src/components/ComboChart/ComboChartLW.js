@@ -26,10 +26,12 @@ const ComboChartLW = () => {
       },
       grid: {
         vertLines: {
-          color: 'rgba(42, 46, 57, 0)',
+          // color: 'rgba(42, 46, 57, 0)',
+          color: 'rgba(0, 0, 0, 0)'
         },
         horzLines: {
-          color: 'rgba(42, 46, 57, 0.6)',
+          // color: 'rgba(42, 46, 57, 0.6)',
+          color: 'rgba(0, 0, 0, 0)'
         },
       },
     });
