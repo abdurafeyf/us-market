@@ -19,7 +19,8 @@ const ComboChartLW = () => {
       layout: {
         background: {
           type: 'solid',
-          color: '#131722',
+          // color: '#131722',
+          color: 'white'
         },
         textColor: '#d1d4dc',
       },
