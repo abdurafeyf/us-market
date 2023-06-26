@@ -41,8 +41,7 @@ try:
         host=os.getenv("PLANETSCALE_HOST"),
         database=os.getenv("PLANETSCALE_DATABASE"),
         user=os.getenv("PLANETSCALE_USER_NAME"),
-        passwd=os.getenv("PLANETSCALE_PASSWORD"),
-        ssl_ca=os.getenv("SSL_CERT")
+        passwd=os.getenv("PLANETSCALE_PASSWORD")        
     )
 
     mySql_insert_query = """
@@ -50,14 +49,17 @@ try:
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     mySql_delete_query = """
-    TRUNCATE TABLE tbl_nasdaq_history
+    DELETE FROM tbl_nasdaq_history
     """
     cursor = connection.cursor()
     cursor.execute(mySql_delete_query)
     print(cursor.rowcount, "records deleted successfully")
 
+
     cursor.executemany(mySql_insert_query, ndx_data)
     print(cursor.rowcount, "records inserted successfully")
+    connection.commit()
+
 
 except Error as error:
     print("Some error has occured {}".format(error))
