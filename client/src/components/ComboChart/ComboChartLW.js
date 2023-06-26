@@ -15,7 +15,7 @@ const ComboChartLW = () => {
       const data = response.data;
       setPost(data);
     });
-  }, [post]);
+  }, []);
 
   useEffect(() => {
     console.log(post);
