@@ -1,6 +1,8 @@
 """
-The purpose of this is to get the nasdaq tickers name and metadata from 
-the api (https://site.financialmodelingprep.com) and insert that data into our database.
+The purpose of this is to get the 
+nasdaq tickers name and metadata from 
+the api (https://site.financialmodelingprep.com) 
+and insert that data into our database.
 """
 import requests
 from dotenv import load_dotenv
