@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 5000;
 const sunburstDataRoute = require("./routes/sunburstData");
+const comboDataRoute = require("./routes/comboData");
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/sunburst-data", sunburstDataRoute);
+app.use("/combo-data", comboDataRoute);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
