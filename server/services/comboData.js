@@ -5,8 +5,9 @@ const config = require('../config');
 async function getMultiple(){
     const rows = await db.query(
         `
+        SELECT * FROM tbl_nasdaq_history;
         `
-    )
+    );
     
     const groupedData = sunburst_data(rows);
     const data = helper.emptyOrRows(groupedData);
