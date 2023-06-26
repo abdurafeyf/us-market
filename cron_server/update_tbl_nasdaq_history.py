@@ -32,7 +32,12 @@ for quote in data['historical']:
             quote['low'],
             quote['change'],
             quote['changePercent'],
-            time.mktime(datetime.datetime(int(year), int(month), int(date)).timetuple()),
+            time.mktime(
+                datetime
+                .datetime(int(year), 
+                         int(month), 
+                         int(date))
+                         .timetuple()),
             quote['date'],
             datetime.datetime.now(),
             quote['volume'],
@@ -49,8 +54,12 @@ try:
     )
 
     mySql_insert_query = """
-    INSERT INTO tbl_nasdaq_history (snapshot_date, indice_symbol, indice_name, symbol, close, open, high, low, `change`, change_p, unix_time, update_time, job_run_time, volume, changeOverTime)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO tbl_nasdaq_history (snapshot_date, 
+    indice_symbol, indice_name, symbol, close, open, 
+    high, low, `change`, change_p, unix_time, update_time, 
+    job_run_time, volume, changeOverTime)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 
+    %s, %s, %s, %s, %s, %s, %s)
     """
     mySql_delete_query = """
     DELETE FROM tbl_nasdaq_history

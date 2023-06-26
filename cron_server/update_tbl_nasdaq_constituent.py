@@ -42,7 +42,8 @@ try:
     )
 
     mySql_insert_query = """
-    INSERT INTO tbl_nasdaq_constituent (symbol, name, sector, subSector, headQuarter, dateFirstAdded, cik, founded)
+    INSERT INTO tbl_nasdaq_constituent 
+    (symbol, name, sector, subSector, headQuarter, dateFirstAdded, cik, founded)
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
     """
     mySql_delete_query = """

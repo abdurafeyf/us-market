@@ -86,8 +86,14 @@ try:
     )
 
     mySql_insert_query = """
-    INSERT INTO tbl_nasdaq_constituent_quote (symbol, name, price, changesPercentage, `change`, dayLow, dayHigh, yearHigh, yearLow, marketCap, priceAvg50, priceAvg200, exchange, volume, avgVolume, open, previousClose, eps, pe, earningsAnnouncement, sharesOutstanding, timestamp) 
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO tbl_nasdaq_constituent_quote 
+    (symbol, name, price, changesPercentage, `change`, dayLow, 
+    dayHigh, yearHigh, yearLow, marketCap, priceAvg50, 
+    priceAvg200, exchange, volume, avgVolume, open, 
+    previousClose, eps, pe, earningsAnnouncement, 
+    sharesOutstanding, timestamp) 
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     mySql_delete_query = """
     DELETE FROM tbl_nasdaq_constituent_quote
