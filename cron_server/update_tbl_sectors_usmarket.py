@@ -1,6 +1,8 @@
 
 """
-This python file is used to update the sectors table of stocks so that each symbol in the market can be
+This python file is used to update the sectors 
+table of stocks so that each symbol in the 
+xmarket can be
 mapped to which sector it belongs.
 """
 import mysql.connector
@@ -39,15 +41,26 @@ for url in urls:
 try:
 
     connection = mysql.connector.connect(
-        host=os.getenv("PLANETSCALE_HOST"),
-        database=os.getenv("PLANETSCALE_DATABASE"),
-        user=os.getenv("PLANETSCALE_USER_NAME"),
-        passwd=os.getenv("PLANETSCALE_PASSWORD"),
-        ssl_ca=os.getenv("SSL_CERT")
+        host=os.getenv(
+            "PLANETSCALE_HOST"
+            ),
+        database=os.getenv(
+            "PLANETSCALE_DATABASE"
+            ),
+        user=os.getenv(
+            "PLANETSCALE_USER_NAME"
+            ),
+        passwd=os.getenv(
+            "PLANETSCALE_PASSWORD"
+            ),
+        ssl_ca=os.getenv(
+            "SSL_CERT"
+            )
     )
 
     mySql_insert_query = """
-    INSERT INTO tbl_sectors_usmarket (symbol, name, sector, subSector, headQuarter, dateFirstAdded, cik, founded) 
+    INSERT INTO tbl_sectors_usmarket (symbol, name, sector, 
+    subSector, headQuarter, dateFirstAdded, cik, founded) 
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
     """
     mySql_delete_query = """
