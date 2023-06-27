@@ -8,15 +8,16 @@ export default function NavBar() {
       fluid
       rounded
     >
-      <Navbar.Brand href="https://flowbite-react.com">
+      <Navbar.Brand href="https://github.com/abdurafeyf">
         <img
-          alt="Flowbite React Logo"
-          className="mr-3 h-6 sm:h-9"
-          src="https://flowbite.com/docs/images/logo.svg"
+            alt="US Market"
+            className="mr-0 h-8 sm:h-16 bg-white rounded-full p-1"
+            src="https://raw.githubusercontent.com/abdurafeyf/us-market/main/client/public/logo.png"
         />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite React
-        </span>
+            <span className="self-center whitespace-nowrap text-xl font-bold dark:text-white ml-1">
+                US Market Analyzer
+            </span>
+
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Button>
