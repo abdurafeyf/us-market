@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.4",
@@ -10,6 +13,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@themesberg/react-bootstrap": "^1.4.1",
     "anychart-react": "^1.4.1",
     "axios": "^1.4.0",
     "d3-chart": "^0.0.1",
@@ -21,6 +25,7 @@
     "react-router-dom": "^6.14.0",
     "react-scripts": "5.0.1",
     "react-zoomable-sunburst-d3-v4": "^0.1.8",
+    "styled-components": "^6.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
