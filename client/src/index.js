@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import './index.css';
 import ComboChartLW from "./components/ComboChart/ComboChartLW";
 import SunburstD3V4 from "./components/SunburstChart/SunburstD3V4";
-// import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 function App() {
   return (
     <div>
+      <NavBar/>
       <SunburstD3V4/>
       <ComboChartLW/>
     </div>
