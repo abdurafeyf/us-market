@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.4",
     "@observablehq/runtime": "^5.8.1",
     "@testing-library/jest-dom": "^5.16.5",

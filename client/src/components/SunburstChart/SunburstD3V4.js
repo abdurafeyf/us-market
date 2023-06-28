@@ -33,21 +33,21 @@ const SunburstD3V4 = () => {
     return transformedData;
   };
 
-  const [post, setPost] = useState(null);
+  const [sunburstPost, setSunburstPost] = useState(null);
   useEffect(() => {
     axios.get(baseUrl).then((response) => {
       const transformedData = transformData(response.data.data);
-      setPost(transformedData);
+      setSunburstPost(transformedData);
     });
   }, []);
 
-  if (!post) return null;
-  console.log(post);
+  if (!sunburstPost) return null;
+  console.log(sunburstPost);
 
   return (
     <div>
       <Sunburst
-        data={post}
+        data={sunburstPost}
         onSelect={onSelect}
         scale="linear"
         tooltipContent={
